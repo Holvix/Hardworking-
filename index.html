@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeba khan</title>
+
+    <!-- Bootstrap 5 for improved responsiveness -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Google Fonts - Modern and readable -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for better icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1641562786513931');
+fbq('track', 'PageView');    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1641562786513931&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #4cc9f0;
+            --success-color: #2ecc71;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: var(--light-bg);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)),
+                url('https://adsbysanju.shop/assets/admin/images/ld2.jpg') no-repeat center center/cover;
+            background-blend-mode: multiply;
+            color: white;
+            padding: 7rem 1rem;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: var(--light-bg);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.3s;
+            animation-fill-mode: both;
+        }
+
+        .head-contact-btn {
+            display: inline-block;
+            background: #fff;
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 1rem;
+            animation: pulse 2s infinite;
+            transform: scale(1);
+        }
+
+        .head-contact-btn:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .head-contact-btn i {
+            margin-right: 8px;
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 3rem 1rem;
+            margin: -60px auto 0;
+            max-width: 1200px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-card {
+            background: white;
+            flex: 1 1 300px;
+            max-width: 350px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary-color);
+            background: #f0f7ff;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--primary-color);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .feature-text {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 5rem 1rem;
+            background: linear-gradient(to bottom, #fff, #f0f7ff);
+            position: relative;
+        }
+
+        .contact-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-text {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--success-color);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 1.5rem;
+        }
+
+        .contact-btn:hover {
+            background: #27ae60;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .floating-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .floating-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 15px;
+            transition: var(--transition);
+            animation: bounce 2s infinite;
+        }
+
+        .floating-icon:hover {
+            transform: scale(1.1);
+            background: var(--secondary-color);
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+            padding: 2rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-top: 1px solid #eee;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .features {
+                padding: 3rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1rem;
+                min-height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .head-contact-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .feature-card {
+                flex: 1 1 100%;
+                max-width: 450px;
+            }
+
+            .contact-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-text {
+                font-size: 1rem;
+            }
+
+            .contact-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .feature-icon {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+                font-size: 2.5rem;
+            }
+
+            .feature-title {
+                font-size: 1.2rem;
+            }
+
+            .contact-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .floating-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 data-aos="fade-down">Make Money Online</h1>
+            <p data-aos="fade-up" data-aos-delay="300">Are You Ready to Turn Your Social Media Time into Real Earnings? Join thousands who are already succeeding!</p>
+            <!-- <a href="https://api.whatsapp.com/send?phone=+91https://alvo.chat/5YeN&text=Yes I am interested can you tell me more ??" class="head-contact-btn connect-btn" data-aos="zoom-in" data-aos-delay="600">
+                <i class="fab fa-whatsapp"></i> Start Earning Now
+            </a> -->
+            <a href="http://tatary.top/2025" class="head-contact-btn connect-btn" data-aos="zoom-in" data-aos-delay="600">
+                <i class="fab fa-whatsapp"></i> Start Earning Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <!-- Feature 1 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <h3 class="feature-title">Work From Home</h3>
+            <p class="feature-text">
+                Earn a comfortable income right from your living room. All you need is a mobile phone and internet connection.
+            </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="feature-title">Mobile Friendly</h3>
+            <p class="feature-text">
+                Just use your smartphone to complete simple tasks and watch your earnings grow day by day.
+            </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="feature-icon">
+                <i class="far fa-clock"></i>
+            </div>
+            <h3 class="feature-title">Flexible Schedule</h3>
+            <p class="feature-text">
+                Work when it suits you – a few hours daily can generate significant income. You control your time and earnings.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Start Your Online Earning Journey Today</h2>
+            <p class="contact-text" data-aos="fade-up" data-aos-delay="200">
+                Discover proven strategies to earn money from popular platforms like Instagram, Facebook, TikTok, and YouTube. Our team will guide you through every step with personalized support to ensure your success.
+            </p>
+            <a href="http://tatary.top/2025" class="contact-btn connect-btn" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fab fa-whatsapp"></i> Contact us to start earning
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating Contact Button -->
+    <div class="floating-icons">
+        <a href="http://tatary.top/2025" class="floating-icon connect-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-text">
+        <div class="container">
+            <p>
+                This site is not affiliated with any social media company or platform. The use of "Instagram," "Facebook," "TikTok," and "YouTube" is for informational purposes only. No guarantees of income are made or implied. Individual results may vary. By contacting us through WhatsApp, you agree to receive information about our services. You can unsubscribe at any time. We respect your privacy and will never share your information with third parties.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // WhatsApp redirect timer if configured
+        let timer = 0;
+        $(document).ready(function() {
+            if (timer != 0) {
+                setTimeout(() => {
+                    let btn_custom = $('.connect-btn').attr('href');
+                    window.location.href = btn_custom;
+                }, 0);
+            }
+
+            // Initialize testimonial slider if multiple testimonials exist
+            if ($('#testimonials .testimonial-card').length > 1) {
+                $('#testimonials').slick({
+                    dots: true,
+                    arrows: false,
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    slidesToShow: 1,
+                    adaptiveHeight: true
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+</html>
